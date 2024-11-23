@@ -70,30 +70,24 @@ public class FAQs extends JFrame {
            lblNewLabel_1.setForeground(Color.WHITE);
            panel.add(lblNewLabel_1);
            
-           JLabel FAQs = new JLabel("FAQs");
-           FAQs.setBounds(337, 56, 349, 56);
-           panel.add(FAQs);
-           FAQs.setForeground(new Color(255, 255, 255));
-           FAQs.setFont(new Font("Tahoma", Font.BOLD, 30));
-           FAQs.setHorizontalAlignment(SwingConstants.CENTER);
-           
            JPanel panel_2_1_1 = new JPanel();
            panel_2_1_1.setLayout(null);
            panel_2_1_1.setBackground(Color.WHITE);
-           panel_2_1_1.setBounds(0, 56, 349, 58);
+           panel_2_1_1.setBounds(340, 56, 349, 58);
            panel.add(panel_2_1_1);
            
-           JLabel report = new JLabel("Report");
-           report.setBounds(0, 0, 349, 58);
-           panel_2_1_1.add(report);
-           report.setHorizontalAlignment(SwingConstants.CENTER);
-           report.setFont(new Font("Tahoma", Font.BOLD, 30));
-           report.setForeground(new Color(245, 82, 86));
+           JLabel FAQs = new JLabel("FAQs");
+           FAQs.setBounds(0, 0, 349, 56);
+           panel_2_1_1.add(FAQs);
+           FAQs.setForeground(new Color(245, 82, 86));
+           FAQs.setFont(new Font("Tahoma", Font.BOLD, 30));
+           FAQs.setHorizontalAlignment(SwingConstants.CENTER);
            
-           report.addMouseListener(new java.awt.event.MouseAdapter() {
+           
+           FAQs.addMouseListener(new java.awt.event.MouseAdapter() {
                @Override
                public void mouseClicked(java.awt.event.MouseEvent e) {
-                   HelpCenter faqsFrame = new HelpCenter(); 
+                   FAQs faqsFrame = new FAQs(); 
                    faqsFrame.setVisible(true); 
                    dispose(); 
                }
@@ -113,6 +107,22 @@ public class FAQs extends JFrame {
            contact.setForeground(new Color(255, 255, 255));
            contact.setFont(new Font("Tahoma", Font.BOLD, 30));
            
+           JLabel report = new JLabel("Report");
+           report.setBounds(0, 55, 349, 58);
+           panel.add(report);
+           report.setHorizontalAlignment(SwingConstants.CENTER);
+           report.setFont(new Font("Tahoma", Font.BOLD, 30));
+           report.setForeground(new Color(255, 255, 255));
+           
+           report.addMouseListener(new java.awt.event.MouseAdapter() {
+               @Override
+               public void mouseClicked(java.awt.event.MouseEvent e) {
+                   HelpCenter faqsFrame = new HelpCenter(); 
+                   faqsFrame.setVisible(true); 
+                   dispose(); 
+               }
+           });
+           
            contact.addMouseListener(new java.awt.event.MouseAdapter() {
                @Override
                public void mouseClicked(java.awt.event.MouseEvent e) {
@@ -126,16 +136,6 @@ public class FAQs extends JFrame {
                @Override
                public void mouseClicked(java.awt.event.MouseEvent e) {
                	feedBack faqsFrame = new feedBack(); 
-                   faqsFrame.setVisible(true); 
-                   dispose(); 
-               }
-           });
-           
-           
-           FAQs.addMouseListener(new java.awt.event.MouseAdapter() {
-               @Override
-               public void mouseClicked(java.awt.event.MouseEvent e) {
-                   FAQs faqsFrame = new FAQs(); 
                    faqsFrame.setVisible(true); 
                    dispose(); 
                }
