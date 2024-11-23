@@ -50,8 +50,6 @@ public class contact extends JFrame {
 
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        
-
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
@@ -154,7 +152,7 @@ public class contact extends JFrame {
 
         name = new JTextField();
         name.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        name.setBounds(19, 48, 337, 44);
+        name.setBounds(19, 48, 338, 44);
         panel_11.add(name);
         name.setColumns(10);
 

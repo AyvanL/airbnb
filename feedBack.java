@@ -52,123 +52,138 @@ public class feedBack extends JFrame {
         feedRatings = new LinkedList<>();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 800, 500);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
+        // Set JFrame to occupy the full screen dimensions
+           setBounds(100, 100, 1465, 786);
+           setExtendedState(JFrame.MAXIMIZED_BOTH);
+           setUndecorated(true);
 
-        JPanel panel = new JPanel();
-        panel.setBackground(new Color(250, 75, 80));
-        panel.setBounds(0, 0, 784, 81);
-        contentPane.add(panel);
-        panel.setLayout(null);
+           contentPane = new JPanel();
+           contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+           setContentPane(contentPane);
+           contentPane.setLayout(null);
 
-        JLabel lblNewLabel_1 = new JLabel("Customer Support");
-        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-        lblNewLabel_1.setForeground(Color.WHITE);
-        lblNewLabel_1.setBounds(289, 0, 200, 40);
-        panel.add(lblNewLabel_1);
+           JPanel panel = new JPanel();
+           panel.setBackground(new Color(250, 75, 80));
+           panel.setBounds(0, 0, 1366, 114); // Dynamically set width
+           contentPane.add(panel);
+           panel.setLayout(null);
 
-        JLabel contact = new JLabel("Contact & Support");
-        contact.setHorizontalAlignment(SwingConstants.CENTER);
-        contact.setForeground(Color.WHITE);
-        contact.setFont(new Font("Tahoma", Font.BOLD, 20));
-        contact.setBounds(560, 42, 200, 39);
-        panel.add(contact);
-        
-        contact.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-            	contact faqsFrame = new contact(); 
-                faqsFrame.setVisible(true);
-                dispose(); 
-            }
-        });
-
-        JLabel report = new JLabel("Report");
-        report.setBounds(0, 42, 177, 39);
-        panel.add(report);
-        report.setHorizontalAlignment(SwingConstants.CENTER);
-        report.setFont(new Font("Tahoma", Font.BOLD, 20));
-        report.setForeground(new Color(255, 255, 255));
-        
-        report.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-            	HelpCenter faqsFrame = new HelpCenter(); 
-                faqsFrame.setVisible(true);
-                dispose(); 
-            }
-        });
-
-        JPanel panel_2_1 = new JPanel();
-        panel_2_1.setLayout(null);
-        panel_2_1.setBackground(Color.WHITE);
-        panel_2_1.setBounds(351, 42, 177, 39);
-        panel.add(panel_2_1);
-
-        JLabel feedBack = new JLabel("Feedback");
-        feedBack.setBounds(0, 0, 177, 39);
-        panel_2_1.add(feedBack);
-        feedBack.setHorizontalAlignment(SwingConstants.CENTER);
-        feedBack.setForeground(new Color(245, 82, 86));
-        feedBack.setFont(new Font("Tahoma", Font.BOLD, 20));
-
-        JLabel FAQs = new JLabel("FAQs");
-        FAQs.setBounds(175, 42, 177, 39);
-        panel.add(FAQs);
-        FAQs.setForeground(new Color(255, 255, 255));
-        FAQs.setFont(new Font("Tahoma", Font.BOLD, 20));
-        FAQs.setHorizontalAlignment(SwingConstants.CENTER);
-        
-        FAQs.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-            	FAQs faqsFrame = new FAQs(); 
-                faqsFrame.setVisible(true);
-                dispose(); 
-            }
-        });
+           JLabel lblNewLabel_1 = new JLabel("Customer Support");
+           lblNewLabel_1.setBackground(Color.WHITE);
+           lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+           lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 45));
+           lblNewLabel_1.setBounds(425, -2, 515, 66);
+           lblNewLabel_1.setForeground(Color.WHITE);
+           panel.add(lblNewLabel_1);
+           
+           JLabel report = new JLabel("Report");
+           report.setBounds(0, 54, 349, 60);
+           panel.add(report);
+           report.setHorizontalAlignment(SwingConstants.CENTER);
+           report.setFont(new Font("Tahoma", Font.BOLD, 30));
+           report.setForeground(new Color(255, 255, 255));
+           
+           JLabel FAQs = new JLabel("FAQs");
+           FAQs.setBounds(337, 56, 349, 56);
+           panel.add(FAQs);
+           FAQs.setForeground(new Color(255, 255, 255));
+           FAQs.setFont(new Font("Tahoma", Font.BOLD, 30));
+           FAQs.setHorizontalAlignment(SwingConstants.CENTER);
+           
+           JPanel panel_2_1_1 = new JPanel();
+           panel_2_1_1.setLayout(null);
+           panel_2_1_1.setBackground(Color.WHITE);
+           panel_2_1_1.setBounds(687, 56, 340, 58);
+           panel.add(panel_2_1_1);
+           
+           JLabel feedBack = new JLabel("Feedback\r\n");
+           feedBack.setBounds(0, 0, 340, 56);
+           panel_2_1_1.add(feedBack);
+           feedBack.setHorizontalAlignment(SwingConstants.CENTER);
+           feedBack.setForeground(new Color(245, 82, 86));
+           feedBack.setFont(new Font("Tahoma", Font.BOLD, 30));
+           
+           feedBack.addMouseListener(new java.awt.event.MouseAdapter() {
+               @Override
+               public void mouseClicked(java.awt.event.MouseEvent e) {
+               	feedBack faqsFrame = new feedBack(); 
+                   faqsFrame.setVisible(true); 
+                   dispose(); 
+               }
+           });
+           
+           JLabel contact = new JLabel("Contact & Support");
+           contact.setBounds(1026, 55, 340, 58);
+           panel.add(contact);
+           contact.setHorizontalAlignment(SwingConstants.CENTER);
+           contact.setForeground(new Color(255, 255, 255));
+           contact.setFont(new Font("Tahoma", Font.BOLD, 30));
+           
+           contact.addMouseListener(new java.awt.event.MouseAdapter() {
+               @Override
+               public void mouseClicked(java.awt.event.MouseEvent e) {
+               	contact faqsFrame = new contact(); 
+                   faqsFrame.setVisible(true); 
+                   dispose(); 
+               }
+           });
+           
+           
+           FAQs.addMouseListener(new java.awt.event.MouseAdapter() {
+               @Override
+               public void mouseClicked(java.awt.event.MouseEvent e) {
+                   FAQs faqsFrame = new FAQs(); 
+                   faqsFrame.setVisible(true); 
+                   dispose(); 
+               }
+           });
+           
+           report.addMouseListener(new java.awt.event.MouseAdapter() {
+               @Override
+               public void mouseClicked(java.awt.event.MouseEvent e) {
+                   HelpCenter faqsFrame = new HelpCenter(); 
+                   faqsFrame.setVisible(true); 
+                   dispose(); 
+               }
+           });
 
         JPanel inputPanel = new JPanel();
         inputPanel.setBackground(new Color(250, 75, 80));
-        inputPanel.setBounds(23, 114, 400, 291);
+        inputPanel.setBounds(24, 177, 869, 523);
         contentPane.add(inputPanel);
         inputPanel.setLayout(null);
 
         JLabel lblName = new JLabel("Name:");
-        lblName.setFont(new Font("Tahoma", Font.BOLD, 12));
+        lblName.setFont(new Font("Tahoma", Font.BOLD, 20));
         lblName.setForeground(Color.WHITE);
         lblName.setBounds(20, 20, 100, 20);
         inputPanel.add(lblName);
 
         name = new JTextField();
-        name.setBounds(20, 40, 180, 30);
+        name.setBounds(20, 42, 337, 44);
         inputPanel.add(name);
 
         JLabel lblFeedback = new JLabel("Feedback:");
-        lblFeedback.setFont(new Font("Tahoma", Font.BOLD, 12));
+        lblFeedback.setFont(new Font("Tahoma", Font.BOLD, 20));
         lblFeedback.setForeground(Color.WHITE);
-        lblFeedback.setBounds(20, 80, 100, 20);
+        lblFeedback.setBounds(20, 97, 148, 30);
         inputPanel.add(lblFeedback);
 
         description = new JTextArea();
-        description.setBounds(20, 100, 350, 91);
+        description.setBounds(20, 126, 822, 313);
         description.setLineWrap(true);
         description.setWrapStyleWord(true);
         inputPanel.add(description);
 
         JLabel lblRating = new JLabel("Rating:");
-        lblRating.setFont(new Font("Tahoma", Font.BOLD, 12));
+        lblRating.setFont(new Font("Tahoma", Font.BOLD, 19));
         lblRating.setForeground(Color.WHITE);
-        lblRating.setBounds(20, 202, 100, 20);
+        lblRating.setBounds(20, 440, 100, 30);
         inputPanel.add(lblRating);
 
         JPanel ratingPanel = new JPanel();
         ratingPanel.setBackground(new Color(245, 82, 86));
-        ratingPanel.setBounds(20, 222, 200, 30);
+        ratingPanel.setBounds(20, 470, 221, 42);
         inputPanel.add(ratingPanel);
 
         JCheckBox[] stars = new JCheckBox[5];
@@ -187,20 +202,20 @@ public class feedBack extends JFrame {
 
         JButton submitButton = new JButton("Submit");
         submitButton.setBackground(new Color(255, 255, 255));
-        submitButton.setBounds(280, 222, 90, 30);
+        submitButton.setBounds(752, 470, 90, 30);
         inputPanel.add(submitButton);
 
         // Feedback display panel
         JPanel feedbackPanel = new JPanel();
         feedbackPanel.setBackground(new Color(250, 75, 80));
-        feedbackPanel.setBounds(450, 114, 300, 250);
+        feedbackPanel.setBounds(935, 177, 392, 449);
         contentPane.add(feedbackPanel);
         feedbackPanel.setLayout(null);
 
-        JLabel feedbackTitle = new JLabel("Top Feedbacks:");
-        feedbackTitle.setFont(new Font("Tahoma", Font.BOLD, 14));
+        JLabel feedbackTitle = new JLabel("Feedbacks:");
+        feedbackTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
         feedbackTitle.setForeground(Color.WHITE);
-        feedbackTitle.setBounds(10, 10, 150, 20);
+        feedbackTitle.setBounds(20, 11, 193, 20);
         feedbackPanel.add(feedbackTitle);
 
         feedbackTextArea = new JTextArea();
@@ -210,15 +225,15 @@ public class feedBack extends JFrame {
         feedbackTextArea.setBackground(new Color(255, 255, 255));
         feedbackTextArea.setForeground(new Color(0, 0, 0));
         JScrollPane scrollPane = new JScrollPane(feedbackTextArea);
-        scrollPane.setBounds(10, 40, 280, 200);
+        scrollPane.setBounds(20, 41, 351, 386);
         feedbackPanel.add(scrollPane);
 
         txtRate = new JTextField();
         txtRate.setEditable(false);
         txtRate.setForeground(Color.WHITE);
         txtRate.setBackground(new Color(245, 82, 86));
-        txtRate.setBounds(450, 375, 300, 30);
-        txtRate.setFont(new Font("Tahoma", Font.BOLD, 15));
+        txtRate.setBounds(935, 649, 392, 51);
+        txtRate.setFont(new Font("Tahoma", Font.BOLD, 20));
         txtRate.setText("System Rating: 0");
         contentPane.add(txtRate);
 
@@ -271,7 +286,7 @@ public class feedBack extends JFrame {
         });
         JLabel background = new JLabel("");
         background.setIcon(new ImageIcon("C:\\Users\\ayvan\\OneDrive\\Documents\\Java-Eclipse\\airbnb\\src\\main\\FAQs.png"));
-        background.setBounds(0, 0, 784, 461);
+        background.setBounds(0, 0, 1366, 775);
         contentPane.add(background);
     }
 
@@ -315,6 +330,6 @@ public class feedBack extends JFrame {
         }
 
         double averageRating = feedbackList.isEmpty() ? 0.0 : (double) totalRating / feedbackList.size();
-        txtRate.setText(String.format("Average Rating: %.1f", averageRating)); 
+        txtRate.setText(String.format("System Rating: %.1f", averageRating)); 
     }
 }
