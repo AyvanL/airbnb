@@ -343,7 +343,7 @@ public class feedBack extends JFrame {
 
         for (Feedback feedback : feedbackList) {
             feedbackTextArea.append("Name: " + feedback.name + "\n");
-            feedbackTextArea.append("Rating: " + feedback.rating + "\n");
+            feedbackTextArea.append("Rate: " + feedback.rating + "★\n");
             feedbackTextArea.append("Description: " + feedback.description + "\n\n");
             totalRating += feedback.rating;
         }
