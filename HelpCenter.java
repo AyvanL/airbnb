@@ -18,14 +18,12 @@ public class HelpCenter extends JFrame {
     private JTextArea description;
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    HelpCenter frame = new HelpCenter();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                HelpCenter frame = new HelpCenter();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -35,124 +33,133 @@ public class HelpCenter extends JFrame {
         Queue<String> roomDesc = new LinkedList<>();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 1465, 786);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setUndecorated(true); // Optional: Removes the window borders if needed
 
-        // Set JFrame to occupy the full screen dimensions
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
-        setLocationRelativeTo(null); // Optional: Centers the JFrame
-
+        // Initialize contentPane
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
         JPanel panel = new JPanel();
         panel.setBackground(new Color(250, 75, 80));
-        panel.setBounds(0, 0, getWidth(), 81); // Dynamically set width
+        panel.setBounds(0, 0, 1366, 114); // Dynamically set width
         contentPane.add(panel);
         panel.setLayout(null);
 
         JLabel lblNewLabel_1 = new JLabel("Customer Support");
         lblNewLabel_1.setBackground(Color.WHITE);
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-        lblNewLabel_1.setBounds(289, -2, 200, 48);
+        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 45));
+        lblNewLabel_1.setBounds(425, -2, 515, 66);
         lblNewLabel_1.setForeground(Color.WHITE);
         panel.add(lblNewLabel_1);
-
-        JPanel panel_1 = new JPanel();
-        panel_1.setBackground(new Color(255, 255, 255));
-        panel_1.setBounds(0, 42, 177, 39);
-        panel.add(panel_1);
-        panel_1.setLayout(null);
-
-        JLabel lblNewLabel = new JLabel("Report");
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
-        lblNewLabel.setForeground(new Color(250, 75, 80));
-        lblNewLabel.setBounds(0, 0, 177, 39);
-        panel_1.add(lblNewLabel);
-
+        
         JLabel FAQs = new JLabel("FAQs");
-        FAQs.setForeground(new Color(255, 255, 255));
-        FAQs.setFont(new Font("Tahoma", Font.BOLD, 20));
-        FAQs.setHorizontalAlignment(SwingConstants.CENTER);
-        FAQs.setBounds(176, 42, 177, 39);
+        FAQs.setBounds(337, 56, 349, 56);
         panel.add(FAQs);
-
-        FAQs.addMouseListener(new java.awt.event.MouseAdapter() {
+        FAQs.setForeground(new Color(255, 255, 255));
+        FAQs.setFont(new Font("Tahoma", Font.BOLD, 30));
+        FAQs.setHorizontalAlignment(SwingConstants.CENTER);
+        
+        JPanel panel_2_1_1 = new JPanel();
+        panel_2_1_1.setLayout(null);
+        panel_2_1_1.setBackground(Color.WHITE);
+        panel_2_1_1.setBounds(0, 56, 349, 58);
+        panel.add(panel_2_1_1);
+        
+        JLabel report = new JLabel("Report");
+        report.setBounds(0, 0, 349, 58);
+        panel_2_1_1.add(report);
+        report.setHorizontalAlignment(SwingConstants.CENTER);
+        report.setFont(new Font("Tahoma", Font.BOLD, 30));
+        report.setForeground(new Color(245, 82, 86));
+        
+        report.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
-                FAQs faqsFrame = new FAQs();
-                faqsFrame.setVisible(true);
-                dispose();
+                HelpCenter faqsFrame = new HelpCenter(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
             }
         });
-
-        JLabel feedBack = new JLabel("Feedback");
-        feedBack.setHorizontalAlignment(SwingConstants.CENTER);
-        feedBack.setForeground(Color.WHITE);
-        feedBack.setFont(new Font("Tahoma", Font.BOLD, 20));
-        feedBack.setBounds(355, 42, 177, 39);
+        
+        JLabel feedBack = new JLabel("Feedback\r\n");
+        feedBack.setBounds(685, 58, 342, 56);
         panel.add(feedBack);
-
-        feedBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-                feedBack faqsFrame = new feedBack();
-                faqsFrame.setVisible(true);
-                dispose();
-            }
-        });
-
+        feedBack.setHorizontalAlignment(SwingConstants.CENTER);
+        feedBack.setForeground(new Color(255, 255, 255));
+        feedBack.setFont(new Font("Tahoma", Font.BOLD, 30));
+        
         JLabel contact = new JLabel("Contact & Support");
-        contact.setHorizontalAlignment(SwingConstants.CENTER);
-        contact.setForeground(Color.WHITE);
-        contact.setFont(new Font("Tahoma", Font.BOLD, 20));
-        contact.setBounds(560, 42, 200, 39);
+        contact.setBounds(1026, 55, 340, 58);
         panel.add(contact);
-
+        contact.setHorizontalAlignment(SwingConstants.CENTER);
+        contact.setForeground(new Color(255, 255, 255));
+        contact.setFont(new Font("Tahoma", Font.BOLD, 30));
+        
         contact.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
-                contact faqsFrame = new contact();
-                faqsFrame.setVisible(true);
-                dispose();
+            	contact faqsFrame = new contact(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
+            }
+        });
+        
+        feedBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+            	feedBack faqsFrame = new feedBack(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
+            }
+        });
+        
+        
+        FAQs.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                FAQs faqsFrame = new FAQs(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
             }
         });
 
+        // Content panel
         JPanel panel_11 = new JPanel();
         panel_11.setBackground(new Color(250, 75, 80));
-        panel_11.setBounds(75, 104, getWidth() - 150, getHeight() - 150);
+        panel_11.setBounds(51, 165, 1274, 557);
         contentPane.add(panel_11);
         panel_11.setLayout(null);
 
         JLabel lblNewLabel_2 = new JLabel("Room Report");
         lblNewLabel_2.setForeground(new Color(255, 255, 255));
-        lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 17));
-        lblNewLabel_2.setBounds(19, 11, 135, 31);
+        lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 25));
+        lblNewLabel_2.setBounds(19, 11, 262, 31);
         panel_11.add(lblNewLabel_2);
 
         JLabel lblNewLabel_11 = new JLabel("Name:");
         lblNewLabel_11.setForeground(new Color(255, 255, 255));
-        lblNewLabel_11.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblNewLabel_11.setBounds(19, 53, 80, 15);
+        lblNewLabel_11.setFont(new Font("Tahoma", Font.BOLD, 20));
+        lblNewLabel_11.setBounds(19, 70, 80, 23);
         panel_11.add(lblNewLabel_11);
 
         name = new JTextField();
-        name.setBounds(19, 69, 340, 29);
+        name.setBounds(19, 94, 338, 44);
         panel_11.add(name);
         name.setColumns(10);
 
         JLabel lblNewLabel_1_1 = new JLabel("Description:");
         lblNewLabel_1_1.setForeground(Color.WHITE);
-        lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblNewLabel_1_1.setBounds(19, 109, 80, 15);
+        lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 20));
+        lblNewLabel_1_1.setBounds(19, 159, 135, 23);
         panel_11.add(lblNewLabel_1_1);
 
         description = new JTextArea();
-        description.setBounds(19, 127, 599, 174);
+        description.setBounds(19, 186, 1228, 299);
         description.setFont(new Font("Tahoma", Font.PLAIN, 12));
         description.setLineWrap(true);
         description.setWrapStyleWord(true);
@@ -161,7 +168,7 @@ public class HelpCenter extends JFrame {
 
         JButton ReportBtn = new JButton("Report");
         ReportBtn.setBackground(new Color(255, 255, 255));
-        ReportBtn.setBounds(529, 312, 89, 23);
+        ReportBtn.setBounds(1158, 509, 89, 23);
         panel_11.add(ReportBtn);
 
         ReportBtn.addActionListener(e -> {
@@ -169,11 +176,6 @@ public class HelpCenter extends JFrame {
             String descriptionValue = description.getText();
             roomName.add(nameValue);
             roomDesc.add(descriptionValue);
-
-            System.out.println("Name: " + nameValue);
-            System.out.println("Description: " + descriptionValue);
-            System.out.println("System name: " + roomName);
-            System.out.println("System name: " + roomDesc);
 
             if (nameValue.isEmpty() || descriptionValue.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Please fill in all fields!", "Error", JOptionPane.ERROR_MESSAGE);
