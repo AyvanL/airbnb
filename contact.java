@@ -138,6 +138,23 @@ public class contact extends JFrame {
             }
         });
         
+        JLabel backBtn = new JLabel("Back");
+        backBtn.setForeground(new Color(255, 255, 255));
+        backBtn.setFont(new Font("Tahoma", Font.BOLD, 11));
+        backBtn.setIcon(new ImageIcon("C:\\Users\\ayvan\\OneDrive\\Documents\\Java-Eclipse\\airbnb\\src\\main\\back.png"));
+        backBtn.setBounds(10, 11, 127, 34);
+        panel.add(backBtn);
+        
+        //link mo dito yung ibaback
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                HelpCenter faqsFrame = new HelpCenter(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
+            }
+        });
+        
         JPanel panel_11 = new JPanel();
         panel_11.setBackground(new Color(250, 75, 80));
         panel_11.setBounds(34, 161, 694, 560);

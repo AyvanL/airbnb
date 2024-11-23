@@ -100,6 +100,23 @@ public class HelpCenter extends JFrame {
         contact.setForeground(new Color(255, 255, 255));
         contact.setFont(new Font("Tahoma", Font.BOLD, 30));
         
+        JLabel backBtn = new JLabel("Back");
+        backBtn.setForeground(new Color(255, 255, 255));
+        backBtn.setFont(new Font("Tahoma", Font.BOLD, 11));
+        backBtn.setIcon(new ImageIcon("C:\\Users\\ayvan\\OneDrive\\Documents\\Java-Eclipse\\airbnb\\src\\main\\back.png"));
+        backBtn.setBounds(10, 11, 127, 34);
+        panel.add(backBtn);
+        
+        //link mo dito yung ibaback
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                HelpCenter faqsFrame = new HelpCenter(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
+            }
+        });
+        
         contact.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
@@ -148,6 +165,7 @@ public class HelpCenter extends JFrame {
         panel_11.add(lblNewLabel_11);
 
         name = new JTextField();
+        name.setFont(new Font("Tahoma", Font.PLAIN, 17));
         name.setBounds(19, 94, 338, 44);
         panel_11.add(name);
         name.setColumns(10);
@@ -160,7 +178,7 @@ public class HelpCenter extends JFrame {
 
         description = new JTextArea();
         description.setBounds(19, 186, 1228, 299);
-        description.setFont(new Font("Tahoma", Font.PLAIN, 12));
+        description.setFont(new Font("Tahoma", Font.PLAIN, 17));
         description.setLineWrap(true);
         description.setWrapStyleWord(true);
         description.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));

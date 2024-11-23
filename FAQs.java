@@ -140,6 +140,23 @@ public class FAQs extends JFrame {
                    dispose(); 
                }
            });
+           
+           JLabel backBtn = new JLabel("Back");
+           backBtn.setForeground(new Color(255, 255, 255));
+           backBtn.setFont(new Font("Tahoma", Font.BOLD, 11));
+           backBtn.setIcon(new ImageIcon("C:\\Users\\ayvan\\OneDrive\\Documents\\Java-Eclipse\\airbnb\\src\\main\\back.png"));
+           backBtn.setBounds(10, 11, 127, 34);
+           panel.add(backBtn);
+           
+           //link mo dito yung ibaback
+           backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+               @Override
+               public void mouseClicked(java.awt.event.MouseEvent e) {
+                   HelpCenter faqsFrame = new HelpCenter(); 
+                   faqsFrame.setVisible(true); 
+                   dispose(); 
+               }
+           });
 
 
         ArrayList<FAQ> faqList = new ArrayList<>();

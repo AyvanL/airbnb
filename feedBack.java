@@ -97,7 +97,7 @@ public class feedBack extends JFrame {
            panel.add(panel_2_1_1);
            
            JLabel feedBack = new JLabel("Feedback\r\n");
-           feedBack.setBounds(0, 0, 340, 56);
+           feedBack.setBounds(0, 0, 330, 56);
            panel_2_1_1.add(feedBack);
            feedBack.setHorizontalAlignment(SwingConstants.CENTER);
            feedBack.setForeground(new Color(245, 82, 86));
@@ -160,6 +160,7 @@ public class feedBack extends JFrame {
         inputPanel.add(lblName);
 
         name = new JTextField();
+        name.setFont(new Font("Tahoma", Font.PLAIN, 17));
         name.setBounds(20, 42, 337, 44);
         inputPanel.add(name);
 
@@ -170,6 +171,7 @@ public class feedBack extends JFrame {
         inputPanel.add(lblFeedback);
 
         description = new JTextArea();
+        description.setFont(new Font("Monospaced", Font.PLAIN, 17));
         description.setBounds(20, 126, 822, 313);
         description.setLineWrap(true);
         description.setWrapStyleWord(true);
@@ -199,6 +201,23 @@ public class feedBack extends JFrame {
                 }
             });
         }
+        
+        JLabel backBtn = new JLabel("Back");
+        backBtn.setForeground(new Color(255, 255, 255));
+        backBtn.setFont(new Font("Tahoma", Font.BOLD, 11));
+        backBtn.setIcon(new ImageIcon("C:\\Users\\ayvan\\OneDrive\\Documents\\Java-Eclipse\\airbnb\\src\\main\\back.png"));
+        backBtn.setBounds(10, 11, 127, 34);
+        panel.add(backBtn);
+        
+        //link mo dito yung ibaback
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                HelpCenter faqsFrame = new HelpCenter(); 
+                faqsFrame.setVisible(true); 
+                dispose(); 
+            }
+        });
 
         JButton submitButton = new JButton("Submit");
         submitButton.setBackground(new Color(255, 255, 255));
