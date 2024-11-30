@@ -8,7 +8,7 @@ import java.awt.Font;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class FAQs1 extends JFrame {
+public class FAQs3 extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -20,7 +20,7 @@ public class FAQs1 extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    FAQs1 frame = new FAQs1();
+                    FAQs3 frame = new FAQs3();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -32,7 +32,7 @@ public class FAQs1 extends JFrame {
     /**
      * Create the frame.
      */
-    public FAQs1() {
+    public FAQs3() {
    
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1465, 786);
@@ -77,7 +77,7 @@ public class FAQs1 extends JFrame {
         contentPane.add(panel_1);
         panel_1.setLayout(null);
         
-        JLabel lblTitile = new JLabel("How to book a stay?");
+        JLabel lblTitile = new JLabel("How to create an account?");
         lblTitile.setHorizontalAlignment(SwingConstants.LEFT);
         lblTitile.setForeground(Color.WHITE);
         lblTitile.setFont(new Font("Tahoma", Font.BOLD, 25));
@@ -88,7 +88,7 @@ public class FAQs1 extends JFrame {
         txtrGoToThe.setBackground(new Color(0x09173d));
         txtrGoToThe.setForeground(new Color(255, 255, 255));
         txtrGoToThe.setFont(new Font("Tahoma", Font.PLAIN, 21));
-        txtrGoToThe.setText("1. Press the \"Book\" Button on the Homepage\r\nStart by visiting our homepage and clicking the \"Book\" button.\r\r\n\r\r\n2. Choose What You Want to Book\r\nSelect the item or service you want to book from the available options.\r\n\r\r\n3. Press the \"Book\" Button\r\nAfter making your selection, click the \"Book\" button to proceed.\r\r\n\r\n4. Fill Out the Form\r\nComplete the booking form with the required details.\r\r\n\r\r\n5. Proceed to Payment\r\nOnce the form is completed, follow the instructions to make your payment and finalize your booking.");
+        txtrGoToThe.setText("1. Press the \"Manage\" Button\nOn our homepage, click the \"Manage\" button to start the signup process.\n\n\r\n\r\n2. Fill Out the Sign-Up Form\nProvide the required information in the form, such as your name, email, and other details.\n\n\r\n\r\n3. You're Done!\nAfter completing the form, your account is created, and you’re ready to use our system.");
         txtrGoToThe.setBounds(20, 74, 1176, 470);
         panel_1.add(txtrGoToThe);
 
